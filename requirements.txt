@@ -1,8 +1,6 @@
 Flask==0.12.2
 gunicorn==19.3.0
 itsdangerous==0.24
-MarkupSafe==0.23
-Werkzeug==0.10.1
 Flask-GoogleMaps==0.2.4
 dict-digger==0.2.1
 certifi==2017.4.17
@@ -16,7 +14,6 @@ googlemaps==2.5.1
 httplib2==0.10.3
 idna==2.5
 isodate==0.5.4
-itsdangerous==0.24
 Jinja2==2.9.6
 keyring==10.4.0
 MarkupSafe==1.0
