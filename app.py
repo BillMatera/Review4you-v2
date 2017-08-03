@@ -1,10 +1,24 @@
-from flask import Flask
-from flask import render_template
-from datetime import datetime
-from flask_googlemaps import GoogleMaps
-from flask_googlemaps import Map
+"""
+Routes and views for the flask application.
+First import python packages from virtual enviorment
+
+"""
+from   flask       import Flask, render_template, Blueprint, Markup
+from   datetime    import datetime
+from   flask       import render_template
+from   flask_googlemaps import Map
+from   yelpapi     import YelpAPI
+import argparse
+from   pprint      import pprint
+import requests
+from   dict_digger import dig
+from   flask       import request , url_for, redirect  
+from   flask       import session
+from   flask_googlemaps import GoogleMaps
+'''-----------------------------------------------------------------------------------------------------------------'''
 
 app = Flask(__name__)
+'''Initiate google maps api with api key'''
 GoogleMaps(app, key="AIzaSyC-IaoIh43rhygYYBAfbhHJuuzbZWKkhII")
 
 
