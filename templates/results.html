@@ -1,0 +1,26 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+<head>
+    
+        {{ mymap.js }}
+    <script>
+        var testmap = new google.maps.Map(mymap);
+      
+    </script>
+
+</head >
+            <body>
+
+                <div>
+        {{mymap.html}}
+                    <ul>
+                        {% for mark in mymap.markers %}
+                            { mark.infobox.append('hello') }
+                            <li>{{ mark }}</li>
+                        {% endfor %}
+                    </ul>
+    </div>
+    <br />
+</body>
+{% endblock %}
