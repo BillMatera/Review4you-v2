@@ -6,11 +6,12 @@
     <title>{{ title }} - My Flask Application</title>
     <link rel="stylesheet" type="text/css" href="/static/content/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/static/content/site.css" />
-    <script src="/static/scripts/modernizr-2.6.2.js"></script>
+    <script src="/static/scripts/modernizr-2.6.2.js"></script> 
+
 </head>
 
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: #A99D98">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -18,11 +19,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="/" class="navbar-brand">Application name</a>
+                <a href="/" class="navbar-brand" style="color:black">Review4You!</a>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="{{ url_for('results') }}">Results</a></li>                   
+                <ul class="nav navbar-nav" style="color:black">
                 </ul>
             </div>
         </div>
@@ -38,7 +38,7 @@
 
     <script src="/static/scripts/jquery-1.10.2.js"></script>
     <script src="/static/scripts/bootstrap.js"></script>
-    <script src="/static/scripts/respond.js"></script>
+    <script src="/static/scripts/respond.js"></script> 
     {% block scripts %}{% endblock %}
 
 </body>

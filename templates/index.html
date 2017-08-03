@@ -1,53 +1,69 @@
 {% extends "layout.html" %}
 
 {% block content %}
-
+<style type="text/css">
+    body {
+        background-color: #C6623F !important;
+        color: black;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+    .jumbotron {
+        min-height: 350px;
+        background: url("https://cdn.lynda.com/course/423403/423403-636167163407198547-16x9.jpg");
+        width: 100%;
+        height: 100%;
+        background-size: 100% 100%;
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+</style>
+<body>
 <div class="jumbotron">
-    <h1>Almost</h1>
-    <p class="lead">Flask is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://flask.pocoo.org/" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
-</div>
-
-<div>
-    <h1>Choose Zip Code</h1>
-    <form action="" method="post">
-        <article>
-            <p>
-                Please enter zip code here:
-                <input type="text" name="zip" />
-            </p>
-            <p>
-                Search for places here:
-                <input type="text" name="searchTerm" />
-            </p>
-            <p>
-                <button type="submit">Submit</button>
-            </p>
-        </article>
-    </form>
-</div>
-
+        <!--   <h1>Title : {{ title }}</h1>
+           <p class="lead">Flask is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+           <p><a href="http://flask.pocoo.org/" class="btn btn-primary btn-large">Learn more &raquo;</a></p> -->
+    </div>
 
 <div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            Flask gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://flask.pocoo.org/docs/">Learn more &raquo;</a></p>
+    <div class="col-lg-6">
+        <ul class="nav nav-tabs">
+            <li class="active" style="color:black !important"><a href="#home" data-toggle="tab" style="color:black !important">Overview</a></li>
+            <li><a href="#profile" data-toggle="tab" style="color:black !important">Instructions</a></li>            
+        </ul>
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade active in" id="home">
+                <p><b>Review4You! is a python web application powered by the Flask microframework</b>. This application acts as a one stop shop for looking up businesses near you, paired with an intuitive <b>GoogleMap interface</b>. Searches are
+            powered by the <b>Yelp Fusion API</b>. Review4You! is hosted on the Heroku cloud hosting platform.</p>
+            </div>
+            <div class="tab-pane fade" id="profile">
+                <p>The instrutions are simple, just input your zip code along with some search parameters and watch the GoogleMap be populated with markers of which are constructed based on your results!</p>
+            </div>            
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>The Python Package Index is a repository of software for the Python programming language.</p>
-        <p><a class="btn btn-default" href="https://pypi.python.org/pypi">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Microsoft Azure</h2>
-        <p>You can easily publish to Microsoft Azure using Visual Studio. Find out how you can host your application using a free trial today.</p>
-        <p><a class="btn btn-default" href="http://azure.microsoft.com">Learn more &raquo;</a></p>
-    </div>
+        <div class="col-lg-6">
+            <h1 style="font-size:30px; color:black">Start Searching!</h1>
+            <div class="form-group">
+                <form class="form-group" action="" method="post">
+                    <article>
+                        <p>
+                            Please enter zip code here:
+                            <input class="form-group" style="background-color:silver" type="text" name="zip" placeholder="  Zipcode Only" />
+                        </p>
+                        <p>
+                            Search for places here:
+                            <input style="background-color:silver" type="text" name="searchTerm" placeholder=" Barber Shop, Pizza..." />
+                        </p>
+                        <p>
+                            <button class="btn btn-default" type="submit">Search</button>
+                        </p>
+                    </article>
+                </form>
+            </div>
+        </div>
 </div>
+  
 
+</body>
 {% endblock %}
