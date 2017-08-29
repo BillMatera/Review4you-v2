@@ -1,12 +1,10 @@
-{% extends "layout.html" %}
+
 
 {% block content %}
 <style type="text/css">
     body {
-        background-color: #C6623F !important;
+        background-color: #B0B0B0;
         color: black;
-        padding-left: 15px;
-        padding-right: 15px;
     }
     /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
     .jumbotron {
@@ -15,53 +13,170 @@
         width: 100%;
         height: 100%;
         background-size: 100% 100%;
-        padding-left: 200px;
-        padding-right: 200px;
+        padding-left: 300px;
+        padding-right: 300px;
     }
+    .carousel-inner > .item > img, .carousel-inner > .item > a > img {
+        display: block;
+        height: 400px;
+        min-width: 100%;
+        width: 100%;
+        max-width: 100%;
+        line-height: 1;
+    }
+    .button2:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    transition: width 2s, height 2s;
+}
+input[type=text] {
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    background-image: url('searchicon.png');
+}
+
+input[type=text]:focus {
+    width: 100%;
+}
+
 </style>
-<body>
-<div class="jumbotron">
-        <!--   <h1>Title : {{ title }}</h1>
-           <p class="lead">Flask is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-           <p><a href="http://flask.pocoo.org/" class="btn btn-primary btn-large">Learn more &raquo;</a></p> -->
+<head>
+    <!-- Bootstrap Links -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript">   
+    $('#myCarousel').carousel();
+    var winWidth = $(window).innerWidth();
+    $(window).resize(function () {
+
+        if ($(window).innerWidth() < winWidth) {
+            $('.carousel-inner>.item>img').css({
+                'min-width': winWidth, 'width': winWidth
+            });
+        }
+        else {
+            winWidth = $(window).innerWidth();
+            $('.carousel-inner>.item>img').css({
+                'min-width': '', 'width': ''
+            });
+        }
+    });
+    </script>
+</head>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: black; margin-left:20px; margin-right:20px; margin-top:20px;">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand" style="color:white">Review4You!</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav" style="color:black">
+                </ul>
+            </div>
+        </div>
     </div>
 
+
+
+	<div id="myCarousel" class="carousel slide" style="padding-left:0px; padding-right:0px; height:500px;">
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="" contenteditable="false"></li>
+        <li data-target="#myCarousel" data-slide-to="1" class="active" contenteditable="false"></li>
+        <li data-target="#myCarousel" data-slide-to="2" class="" contenteditable="false"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active">
+            <img style="height:500px; width:1280px;" src="http://morrisesq.com/wp-content/uploads/2016/06/menu-restaurant-vintage-table.jpg" alt="" class="">
+            <div class="carousel-caption">
+                <h4 class="">First Slide Title</h4>
+                <p class="">
+                   Description for First Slide, this First Slide.
+                </p>
+            </div>
+        </div>
+        <div class="item">
+            <img style="height:500px; width:1280px;" src="http://media.cleveland.com/strongsville/photo/master-72cbe68badd9999b.jpg" alt="" class="">
+            <div class="carousel-caption">
+                <h4 class="">Second Slide Title</h4>
+
+                <p class="">
+                   Description for Second Slide, this is Second Slide.
+                </p>
+            </div>
+        </div>
+        <div class="item" style="">
+            <img style="height:500px; width:1280px;" src="http://103.19.216.125/wp-content/uploads/2016/04/barber-shop-barangaroo-1.jpg" alt="" class="">
+            <div class="carousel-caption">
+                <h4 class="">Third Slide Title</h4>
+
+                            <p class="">
+                   Description for Third Slide, this is Third Slide.
+                </p>
+            </div>
+        </div>
+    </div>    
+
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+
+
+</div>
+<body>
+
+<div style="background-color:gray;">
+</br>
 <div class="row">
-    <div class="col-lg-6">
+    <div class="col-md-4" style="margin-left:50px;">
         <ul class="nav nav-tabs">
-            <li class="active" style="color:black !important"><a href="#home" data-toggle="tab" style="color:black !important">Overview</a></li>
+            <li class="active" style="color:black !important;"><a href="#home" data-toggle="tab" style="color:black !important">Overview</a></li>
             <li><a href="#profile" data-toggle="tab" style="color:black !important">Instructions</a></li>            
         </ul>
         <div id="myTabContent" class="tab-content">
             <div class="tab-pane fade active in" id="home">
-                <p><b>Review4You! is a python web application powered by the Flask microframework</b>. This application acts as a one stop shop for looking up businesses near you, paired with an intuitive <b>GoogleMap interface</b>. Searches are
+                <p style="font-size:20px;"><b>Review4You! is a python web application powered by the Flask microframework</b>. This application acts as a one stop shop for looking up businesses near you, paired with an intuitive <b>GoogleMap interface</b>. Searches are
             powered by the <b>Yelp Fusion API</b>. Review4You! is hosted on the Heroku cloud hosting platform.</p>
             </div>
             <div class="tab-pane fade" id="profile">
-                <p>The instrutions are simple, just input your zip code along with some search parameters and watch the GoogleMap be populated with markers of which are constructed based on your results!</p>
+                <p style="font-size:20px;">The instructions are simple, just input your zip code along with some search parameters and watch the GoogleMap be populated with markers of which are constructed based on your results!</p>
             </div>            
         </div>
     </div>
-        <div class="col-lg-6">
-            <h1 style="font-size:30px; color:black">Start Searching!</h1>
+        <div class="col-md-4" style="margin-left:150px; box-shadow: 10px 10px 5px black; border-style:solid; border-width:1px; background-color:white;">
+            <h1 style="color:black">Start Searching!</h1>
             <div class="form-group">
                 <form class="form-group" action="" method="post">
                     <article>
-                        <p>
+                        <p style="font-size:20px;">
                             Please enter zip code here:
-                            <input class="form-group" style="background-color:silver" type="text" name="zip" placeholder="  Zipcode Only" />
+                            <input class="form-group" style="box-shadow: 10px 10px 5px grey;" type="text" name="zip" placeholder="  Zipcode Only" />
                         </p>
-                        <p>
+                        <p style="font-size:20px;">
                             Search for places here:
-                            <input style="background-color:silver" type="text" name="searchTerm" placeholder=" Barber Shop, Pizza..." />
+                            <input style="box-shadow: 10px 10px 5px grey;" type="text" name="searchTerm" placeholder=" Barber Shop, Pizza..." />
                         </p>
+                        </br>
                         <p>
-                            <button class="btn btn-default" type="submit">Search</button>
+                            <button class="btn btn-default button2" type="submit">Search</button>
                         </p>
                     </article>
                 </form>
             </div>
         </div>
+</div>
+</br>
+</br>
+</br>
 </div>
   
 

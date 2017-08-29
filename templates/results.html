@@ -1,21 +1,19 @@
 ﻿{% extends "layout.html" %}
 
 {% block content %}
-<head>
-    
+<head>    
         {{ mymap.js }}
     <script>
-        var testmap = new google.maps.Map(mymap);
-      
+        var testmap = new google.maps.Map(mymap);     
     </script>
-
 </head >
             <body>
-
                 <div>
-        {{mymap.html}}
-                    
+        {{mymap.html}}                    
     </div>
     <br />
+    <div>
+          <h1 style="text-align=center; font-size=100px;"><b>Click the Markers to see their Info Boxes pop up with their Data!</b></h1>
+    </div>
 </body>
 {% endblock %}

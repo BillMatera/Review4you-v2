@@ -7,11 +7,9 @@
     <link rel="stylesheet" type="text/css" href="/static/content/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/static/content/site.css" />
     <script src="/static/scripts/modernizr-2.6.2.js"></script> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
-</head>
-
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: #A99D98">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: black; margin-left:20px; margin-right:20px;">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -19,7 +17,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="/" class="navbar-brand" style="color:black">Review4You!</a>
+                <a href="/" class="navbar-brand" style="color:white">Review4You!</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav" style="color:black">
@@ -27,6 +25,10 @@
             </div>
         </div>
     </div>
+</head>
+
+<body>
+    
 
     <div class="container body-content">
         {% block content %}{% endblock %}
@@ -39,6 +41,9 @@
     <script src="/static/scripts/jquery-1.10.2.js"></script>
     <script src="/static/scripts/bootstrap.js"></script>
     <script src="/static/scripts/respond.js"></script> 
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     {% block scripts %}{% endblock %}
 
 </body>
