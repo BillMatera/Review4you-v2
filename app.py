@@ -15,6 +15,7 @@ from   dict_digger import dig
 from   flask       import request , url_for, redirect  
 from   flask       import session
 from   flask_googlemaps import GoogleMaps
+import json
 '''-----------------------------------------------------------------------------------------------------------------'''
 
 app = Flask(__name__)
@@ -22,18 +23,13 @@ app = Flask(__name__)
 GoogleMaps(app, key="AIzaSyC-IaoIh43rhygYYBAfbhHJuuzbZWKkhII")
 
 
-'''Send POST HTTP request to Yelp Fusion API to recieve oauth token via client_id and client_secret provided by yelp'''
-app_id = 'ww8HxfO6u0jFbFCAAndDRA'
-app_secret = 'NsZicE7I5DBfwwAR1otKmXV93mFzh5MuM0CfiIide3OYrfZno9S6px6FyOpujNpP'
-data = {'grant_type': 'client_credentials',
-        'client_id': app_id,
-        'client_secret': app_secret}
+'''Authorization values client_id and api_key provided by yelp'''
+client_id = 'ULxccklBxmMHp6URHv4khw'
+api_key = 'LBycV4T66AgIxeNuMZlq3lqKCV3eH_T2W4QDR8f0fIYK3HGkxq8_mpvBoCF5aaLuQTL_-yDgEJdgdl_gHQ7PyvdyPJ6Cz2_vVbxRJbNTZhNKTpdCx8tPl5JxaaNWXnYx'
 
-'''Recieve token from yelp'''
-token = requests.post('https://api.yelp.com/oauth2/token', data=data)
-access_token = token.json()['access_token']
+'''Sample call to yelp fusion API'''
 url = 'https://api.yelp.com/v3/businesses/search'
-headers = {'Authorization': 'bearer %s' % access_token}
+headers = {'Authorization': 'bearer %s' % api_key}
 params = {'location': '07727',
           'term': 'Japanese Restaurant',
           'pricing_filter': '1, 2',
@@ -65,7 +61,7 @@ def index():
         
 @app.route('/results')
 def results(): 
-    headers = {'Authorization': 'bearer %s' % access_token}
+    headers = {'Authorization': 'bearer %s' % api_key}
     params = {'location': session.get('zipcode'),
           'term': session.get('searchTerm'),
           'pricing_filter': '1, 2',
@@ -75,6 +71,8 @@ def results():
     resp = requests.get(url=url, params=params, headers=headers)
     '''JSONify response for use in logic'''
     response = resp.json() 
+    # parsedRespone = json.loads(str(response))
+    print(json.dumps(response, indent=4))
     businesses = response.get('businesses')
     mymap = Map(
             identifier="view-side",
