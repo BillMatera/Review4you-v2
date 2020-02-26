@@ -14,7 +14,7 @@ Public url : https://review-4-u.herokuapp.com/
     - if that gives an error, try unlinking python2 first with command `brew unlink python@2` , then run `brew link python3` 
 
 
-2. Once python3 is set up , after pulling the repo down for the first time, need to download dependencies locally
+2. Once python3 is set up , after cloning the repo for the first time, need to download dependencies locally
     - The dependencies are declared in the requirments.txt at the root of the project
     - To download these locally , run `pip3 install -r requirements.txt` at the root of the project
 
