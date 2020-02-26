@@ -52,3 +52,5 @@ Review4You! website - Flask Micro Framework - Python  3.6
   - `flask_googlemaps` package for google map on results page
 
   - Yelp Fusion API - business search endpoint : `api.yelp.com/v3/businesses/search`
+
+  - Heroku for hosting
