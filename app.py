@@ -108,7 +108,7 @@ def results():
                     zoom = 4,
                     style= "height:500px;width:auto;margin:0;"
                 ) 
-        userMessage = 'Apologies, there was an issue connecting to yelp. Please check your search parameters try again'
+        userMessage = 'Apologies, there was an issue connecting to yelp. Please check your search parameters and try again'
         return render_template('results.html', mymap=mymap, marks=mymap.markers , userMessage=userMessage)
 
 

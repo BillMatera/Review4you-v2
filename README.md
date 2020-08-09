@@ -2,8 +2,7 @@
 
 Review4You! website - Flask Micro Framework - Python  3.6
 
-Public url : https://review-4-u.herokuapp.com/
-
+Public url : https://review4you-v2.herokuapp.com/
 
 ###  Pre-requisites
 
