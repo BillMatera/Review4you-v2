@@ -2,18 +2,40 @@
 
 {% block content %}
 <head>    
-        {{ mymap.js }}
+    {{ mymap.js }}
     <script>
         var testmap = new google.maps.Map(mymap);     
     </script>
-</head >
-            <body>
-                <div>
+</head>
+
+<body>
+    <div class="navbar" style="background-color: #69BADC; margin-bottom:0px; border-radius:0;">
+        <span class="navbar-brand" href="#" style="color:white;">Review 4 You!</span>
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- <a href="/" class="navbar-brand" style="color:black">Review4You!</a> -->
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav" style="color:black">
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div>
         {{mymap.html}}                    
     </div>
-    <br />
+
+    <br/>
+    
     <div>
-          <h1 style="text-align=center; font-size=100px;"><b>Click the Markers to see their Info Boxes pop up with their Data!</b></h1>
+          <h1 style="text-align=center; font-size=42px;"><b>{{userMessage}}</b></h1>
     </div>
+
 </body>
 {% endblock %}
